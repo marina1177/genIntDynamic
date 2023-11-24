@@ -9,7 +9,7 @@ void io_read_input(void **av, t_params *params,t_arrv3 *crds, t_arrv3 *vlcts, t_
 
 	FILE *fp;
 
-	if(fp = fopen(av[ARG_IO], "rb")==NULL){
+	if((fp = fopen(av[ARG_IO], "rb"))==NULL){
 		io_error("Cant open input file\n");
 		return;
 	}

@@ -13,8 +13,10 @@ OBJ_PATH = obj/
 
 SRCS_NAME = main.c \
 			mem_manage.c \
-			print_output.c \
-			
+			io_read_input.c \
+			io_write_input.c \
+			gen_main.c \
+
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 OBJ = $(addprefix $(OBJ_PATH), $(SRCS_NAME:.c=.o))
