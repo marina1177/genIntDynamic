@@ -1,23 +1,35 @@
 #ifndef PARAMS_H
 
-# define AMOUNT_OF_PARTICLES		5
+# define THREE_DIM					0
+# define TWO_DIM					1
+
+# define SIN_S						1
+# define SQUARE_S					0
+
+# define AMOUNT_OF_PARTICLES		1
 # define TRAP_FREQ					50 //[Hz]
-# define FULL_TIME					10*1/TRAP_FREQ
-# define TIME_STEP		 			1/TRAP_FREQ/100
+# define FULL_TIME					50//[periods] params->tfull =  FULL_TIME50;
+# define TIME_STEP		 			300 // 1/params->freq/TIME_STEP
 # define TRAP_U_ALTERNATIVE			5000 //[V]
 # define TRAP_U_DIRECT			    0//[V]
 # define NU_AIR			            18.27*pow(10,-6)
-# define TRAP_ELECTRODE_DIAMETER    0.004
-# define TRAP_ELECTRODE_DISTANCE    0.019
+# define TRAP_ELECTRODE_DIAMETER    0.004 //[m]
+# define TRAP_ELECTRODE_DISTANCE    0.019 // [m]
 
-# define PARTICLE_DIAMETER          2*10e-5 //[m]	
-# define PARTICLE_RHO                3.95e3 //[]
-# define PARTICLE_Q                  98000//??[e]
-# define PARTICLE_M                  PARTICLE_RHO *(4/3)*pow(PARTICLE_DIAMETER/2, 3);
+# define VARIABLE_DIAMETER			0  // 0-если монодисперсные частицы размера PARTICLE_DIAMETER
+// с отношением заряда к массе  PARTICLE_Q зарядов электрона е
 
-// particle->rho = 3.95e3;
-// 	particle->d = 2*10e-5;
-// 	particle->m = particle->rho*(4/3)*M_PI *pow(particle->d/2, 3);
-// 	particle->q = 5e-16;
+# define Q_EL						-1.6e-19
+# define Q_DIV_M_PARAM				150000
+# define PARTICLE_DIAMETER_MAX		10*10e-4 //[m]
+# define PARTICLE_DIAMETER_MIN		2*10e-5 //[m]
+# define PARTICLE_DIAMETER			10 //[mkm]
+# define PARTICLE_RHO				3990 //[]
+
+# define MAP_FILE				"potential_ahalf.txt"
+# define GRAD_FILE				"grad_ahalf.txt"
+# define WRITE_GRAD				0
+// >> ./verle -i test_31_05.bin potential_ahalf.txt
+
 #endif
 
